@@ -16,15 +16,4 @@ In the corresponding issue, you have the following options:
 * <b style='color:red'>*</b> Send to Jira: send data to Jira (in a new interface, where you can get some feedback). 
 * Issue work log: shows log of the work done on this issue.
 
-About option "Send to Jira", in the tests performed, when sending a time less than 1 minute, the Jira API returns:
-
-```json
-{
-    "errorMessages": [
-        "Worklog must not be null."
-    ],
-    "errors": {
-        "timeLogged": "You must indicate the time spent working."
-    }
-}
-```
+About option "Send to Jira", for now, he's only considering the full minute.
