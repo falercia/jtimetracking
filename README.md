@@ -17,3 +17,19 @@ In the corresponding issue, you have the following options:
 * Issue work log: shows log of the work done on this issue.
 
 About option "Send to Jira", for now, he's only considering the full minute.
+If you try to send a value less than 1 minute, the application receives this return:
+
+```json
+{
+    "errorMessages": [
+        "Worklog must not be null."
+    ],
+    "errors": {
+        "timeLogged": "You must indicate the time spent working."
+    }
+}
+```
+
+And JTimeTracking shows: "Worklog must not be null.".
+
+If you use google account to Jira, you need reset your password and use that new credentials to use JTimeTracking .
