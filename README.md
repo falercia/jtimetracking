@@ -16,7 +16,7 @@ In the corresponding issue, you have the following options:
 * <b style='color:red'>*</b> Send to Jira: send data to Jira (in a new interface, where you can get some feedback). 
 * Issue work log: shows log of the work done on this issue.
 
-About option "Send to Jira", for now, he's only considering the full minute.
+About option "Send to Jira", he's only considering the full minute.
 If you try to send a value less than 1 minute, the application receives this return:
 
 ```json
