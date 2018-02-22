@@ -32,10 +32,13 @@ public class FormTimeTracking extends javax.swing.JFrame {
    private final MConfig config;
    private MUser user;
    private final HashMap<String, String> params;
-   private ArrayList<MIssue> listIssues;
+   private final ArrayList<MIssue> listIssues;
+   private final String args[];
 
-   public FormTimeTracking() {
+   public FormTimeTracking(String args[]) {
       initComponents();
+
+      this.args = args;
 
       config = new MConfig();
       this.params = new HashMap<>();
@@ -45,6 +48,7 @@ public class FormTimeTracking extends javax.swing.JFrame {
       this.setLocationRelativeTo(null);
       setIconImage(new javax.swing.ImageIcon(getClass().getResource("/br/com/ggroup/resources/stopwatch.png")).getImage());
       configThemes();
+      verifyArguments();
    }
 
    public MConfig getConfig() {
@@ -72,6 +76,14 @@ public class FormTimeTracking extends javax.swing.JFrame {
          });
 
          jMenuThemes.add(it);
+      }
+   }
+
+   private void verifyArguments() {
+      if (args.length == 3) {
+         jTextFieldURL.setText(args[0]);
+         jTextFieldUsername.setText(args[1]);
+         jPasswordFieldPassword.setText(args[2]);
       }
    }
 
@@ -499,7 +511,7 @@ public class FormTimeTracking extends javax.swing.JFrame {
       createIssuesPanel();
    }//GEN-LAST:event_jCheckBoxOnlyMyIssuesActionPerformed
 
-   public static void main(String args[]) {
+   public static void main(final String args[]) {
 
       java.awt.EventQueue.invokeLater(new Runnable() {
          public void run() {
@@ -508,7 +520,7 @@ public class FormTimeTracking extends javax.swing.JFrame {
             } catch (Exception e) {
                e.printStackTrace();
             }
-            new FormTimeTracking().setVisible(true);
+            new FormTimeTracking(args).setVisible(true);
          }
       });
    }
