@@ -50,7 +50,9 @@ public class MBoard {
    private void extract() throws JSONException {
       if (getOrginalContent() != null) {
          setId(getOrginalContent().getInt("id"));
-         setType(getOrginalContent().getJSONObject("location").getString("projectTypeKey"));
+         if (getOrginalContent().getJSONObject("location").has("projectTypeKey")) {
+            setType(getOrginalContent().getJSONObject("location").getString("projectTypeKey"));
+         }
          setName(getOrginalContent().getJSONObject("location").getString("name"));
       } else {
          setId(-1);

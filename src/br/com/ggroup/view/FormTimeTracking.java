@@ -18,6 +18,8 @@ import br.com.ggroup.util.LaFThemes;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
@@ -148,6 +150,16 @@ public class FormTimeTracking extends javax.swing.JFrame {
          for (int i = 0; i < response.getReturnObject().getJSONArray("values").length(); i++) {
             listBoards.add(new MBoard(response.getReturnObject().getJSONArray("values").getJSONObject(i)));
          }
+
+         Collections.sort(listBoards, new Comparator() {
+            @Override
+            public int compare(Object o1, Object o2) {
+               MBoard m1 = (MBoard) o1;
+               MBoard m2 = (MBoard) o2;
+               return m1.getName().compareToIgnoreCase(m2.getName());
+            }
+         });
+
          jComboBoxBoard.setModel(new DefaultComboBoxModel(listBoards.toArray()));
          controlFields(true);
       } catch (Exception e) {
@@ -273,7 +285,11 @@ public class FormTimeTracking extends javax.swing.JFrame {
 
       jLabelURL.setText("URL:");
 
+      jTextFieldURL.setText("https://hubchain.atlassian.net");
+
       jLabelUsername.setText("Username:");
+
+      jTextFieldUsername.setText("fabio.garcia@hubchain.io");
 
       jLabelPassword.setText("Password:");
 
@@ -284,6 +300,8 @@ public class FormTimeTracking extends javax.swing.JFrame {
             jButtonConnectActionPerformed(evt);
          }
       });
+
+      jPasswordFieldPassword.setText("Naosei00_-@@++hubchain");
 
       javax.swing.GroupLayout jPanelTopLayout = new javax.swing.GroupLayout(jPanelTop);
       jPanelTop.setLayout(jPanelTopLayout);

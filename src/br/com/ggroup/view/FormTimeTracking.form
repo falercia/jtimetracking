@@ -103,6 +103,9 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="jTextFieldURL">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="https://hubchain.atlassian.net"/>
+          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabelUsername">
           <Properties>
@@ -110,6 +113,9 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="jTextFieldUsername">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="fabio.garcia@hubchain.io"/>
+          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabelPassword">
           <Properties>
@@ -128,6 +134,9 @@
           </Events>
         </Component>
         <Component class="javax.swing.JPasswordField" name="jPasswordFieldPassword">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Naosei00_-@@++hubchain"/>
+          </Properties>
         </Component>
       </SubComponents>
     </Container>
